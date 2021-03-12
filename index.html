@@ -20,13 +20,13 @@
 <body>
     <header>
         <a href="#" class="logo">Portfolio</a>
-        <div class="toggle"></div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <div class="toggle" onclick="toggleHomebar();"></div>
+        <ul class="homebar">
+            <li><a href="#home" onclick="toggleHomebar();">Home</a></li>
+            <li><a href="#about" onclick="toggleHomebar();">About Me</a></li>
+            <li><a href="#services" onclick="toggleHomebar();">Services</a></li>
+            <li><a href="#products" onclick="toggleHomebar();">Products</a></li>
+            <li><a href="#contact" onclick="toggleHomebar();">Contact</a></li>
         </ul>
     </header>
     <section class="banner" id="home">
@@ -88,7 +88,7 @@
     </section>
     <section class="products" id="products">
         <div class="heading">
-            <h2>Latest Work</h2>
+            <h2>Products</h2>
         </div>
         <div class="content">
             <div class="productsBox">
@@ -195,6 +195,13 @@
             const header = document.querySelector('header');
             header.classList.toggle('sticky', window.scrollY > 0);
         });
+
+        function toggleHomebar() {
+            const toggleHomebar = document.querySelector('.toggle');
+            const homebar = document.querySelector('.homebar');
+            toggleHomebar.classList.toggle('active');
+            homebar.classList.toggle('active');
+        }
     </script>
 </body>
 
